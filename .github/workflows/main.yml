@@ -1,0 +1,42 @@
+name: Minify JS and CSS
+on:
+  push:
+    # this is the branch where you develop your site
+    # as discussed in the publishing sources section
+    # this can change if you are using an user/organization repo
+    branches: [ master ]
+    
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write  
+    
+jobs: 
+  checkout-minify-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      # Install NodeJS and CLI tools
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - run: npm install -g terser
+      - run: npm install -g csso-cli
+      - run: npm install -g html-minifier
+
+      # Perform minification, overwriting original files
+      - run: for i in ./js/*.js; do terser $i --compress --mangle -o $i; done
+      - run: for i in ./style/*.css; do csso $i -o $i; done   
+      - run: for i in ./js/*.css; do csso $i -o $i; done 
+      # - run: html-minifier --collapse-boolean-attributes --collapse-whitespace --minify-css --minify-js --minify-urls --remove-attribute-quotes --remove-comments --remove-empty-attributes --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --use-short-doctype -o index.html index.html
+      - run: for i in ./*.html; do html-minifier  --collapse-boolean-attributes --collapse-whitespace --minify-css --minify-js --minify-urls --remove-attribute-quotes --remove-comments --remove-empty-attributes --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --use-short-doctype $i -o $i; done
+      
+
+      # (Force) push changes to `build` branch
+      - run: |
+          git config user.name mountainsandcodespaces
+          git config user.email mountainsandcodespaces@user.noreply.github.com
+          git commit -am 'Automated minify of ${{ github.sha }}'
+          git push --force -u origin master:build
