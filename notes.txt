@@ -1,25 +1,6 @@
 Version:
 #100 - 12/16/2022
 
-Deployment Process:
-1.  Test out in aspenpeakstudios (Test).
-2.  Update version number in Notes.txt
-3.  Download code from github web as aspenpeakstudios.
-4.  Remove notes.txt 
-5.  Login into github web as mountainsandcode
-6.  Upload new code.
-7.  Change links for github pages
-8.  Deploy and verify.
-
-
-
-cd C:\Users\Bash Warrior King\Projects\Portfolio
-
-
-Github Pages
-https://github.com/aspenpeakstudios/Portfolio/settings/pages
-
-
 Remote Debugging                  - https://developer.chrome.com/docs/devtools/remote-debugging/
 chrome://inspect#devices
 
