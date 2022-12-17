@@ -106,9 +106,9 @@ function navigateToPage(source, dest) {
     // HACK FOR GITHUB PAGES
     // Fix the URL when deployed on GitHubPages by adding in the repo name.
     let destination = '';
-    if (location.protocol == "https:") {
-        destination = '/Portfolio'
-    }       
+//     if (location.protocol == "https:") {
+//         destination = '/Portfolio'
+//     }       
 
     const newLocation = `${destination}/${dest}`;
     // update window location
