@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link rel="icon" type="image/png" href="../../coding.png" />
+  <title>Career History in 6 questions - NWM</title> 
+  <link rel='stylesheet' href='~/../../../css/global.css' />  
+  <link rel='stylesheet' href='~/../../../css/portfolio-main.css' />  
+  <link rel='stylesheet' href='~/../../../css/career.css' /> 
+  <link rel='stylesheet' href='~/../../../js/components/pageSegments/pageSegments.css' />  
+  <link rel='stylesheet' href='~/../../../css/media-queries.css' />
+
+  <style>
+    .work-page .company-profile {        
+        background-color: skyblue;        
+        background: linear-gradient(rgba(33,124,176,.9),
+                                    rgb(0 93 131 / 90%)), 
+                                    url(../../img/timeline/nwm.jpg) no-repeat;        
+        background-size: 100%;
+        background-position: 25%;
+    }
+  </style>
+
+</head>
+
+<body>
+<main>
+
+    <section class='work-page'>
+        <div class='header'>
+            <div class='home-link' title='home' role='button'></div>        
+            <div class='header-content'>
+                <div class='stats'></div>
+            </div>
+        </div> 
+        <div class='company-profile'>Career History in Six Questions Or Less</div>
+        <div class='content'>    
+            <div class='side-bar sticky'></div>
+            <div class='detail-page'></div>
+        </div>
+        <div class='footer-nav'></div>            
+    </section>
+    <footer></footer>
+
+</main>
+</body>
+
+<script src="/js/intersectionObserver.js"></script>
+<script src="/Portfolio/js/intersectionObserver.js"></script>
+
+<script src="/js/routing.js"></script>
+<script src="/Portfolio/js/routing.js"></script> 
+
+<script src="~/../../../js/components/pageSegments/pageSegments.js"></script>
+<script src="/Portfolio/js/components/pageSegments/pageSegments.js"></script> 
+
+<script src="/js/careerDetailPage.js"></script>
+<script src="/Portfolio/js/careerDetailPage.js"></script> 
+
+<script>
+    console.log("fire up the javascript");
+    resetBody();
+
+    const headerData = [
+        {
+            company: 'Northwestern Mutual',
+            yearStart: 2004,
+            yearEnd: 2014,
+            title: 'Application Engineer',
+            image: 'nwm.jpg',
+        }
+    ]
+
+    const pageData = [         
+        {
+            type: 20,
+            summary: 'Working at NWM',
+            question: 'Tell me about working at Northwestern Mutual.',
+            answer: [
+                {
+                    text: 'Northwestern Mutual (NWM) is a large fortune 500 company in the financial services industry.  NWM has a huge IT department, around 2000 employees and contractors while I worked there.  Being such a large team, responsibilities were very siloed and if you needed a solution for something (monitoring, automated testing, infrastructure) there was usually a team in place for that. ',
+                    classes: ''
+                }, 
+                {
+                    text: 'This was my first -real job- out of college and it was an impressive environment.  During my 10 years with Northwestern Mutual I worked on several IT teams and gained a lot of soft skills and  business knowledge I would use later on.',
+                    classes: ''
+                },                                
+            ]
+        },
+        {
+            type: 20,
+            summary: 'Types of Roles',
+            question: 'What were some of your roles?',
+            answer: [                
+                {
+                    text: 'I worked as an application developer on a Java application used to manage all the assets created by the company’s Graphic Arts department.  That was my first experience developing based off of a prototype and working with a dedicated front end developer, a role that I didnt know existed but recognized as something I wanted to do.  It was also a good experience to be surrounded with the company’s internal and external marketing and I ended using that knowledge later on when we owned a business.',
+                    classes: ''
+                },    
+                {
+                    text: 'My last role was the Application Engineer of the Electronic Files team.  My team handled the software from the time a client started filling out paperwork to the time a policy was issued.  It was a huge system spanning multiple technologies…Mainframe, C#, Java, Message Queues.  I was responsible for knowing how everything fit together and working with other Application Engineers on the team to keep it going and to continually upgrade and evolve it.  Day to day I did a mix of planning, testing, coordinating, and coding.',
+                    classes: ''
+                },                             
+            ]
+        },
+        {
+            type: 20,
+            summary: 'Types of Projects',
+            question: 'What types of projects were you involved with?',
+            answer: [
+                {
+                    text: 'I worked on a number of projects ranging in size from solo projects taking a few months to multi-year efforts with huge teams and budgets.',
+                    classes: ''
+                }, 
+                {
+                    text: 'On one of my solo projects I re-wrote a set of legacy reporting applications into one data driven C# app.  It cut the run time from 4 hours down to 15 minutes and made future reports much easier to create.  Another time I was recruited by a sibling team to help develop a system to retrieve electronic medical records and deliver them to the Underwriting department.  It was fun to work on the solution and to learn how another business area in the company worked.',
+                    classes: ''
+                },   
+                {
+                    text: 'Besides development and support  at times I was responsible for training users, generating documentation and handling application rollouts.  In IT there is so much required for us to know.  Early on I started creating how-to guides to help myself and other developers making sytem changes, and I also created user guides so users didn’t have to call me anytime they had a question.',
+                    classes: ''
+                },                                          
+            ]
+        },
+        {
+            type: 20,
+            summary: 'Not just coding and testing',
+            question: 'Besides coding and testing what else did you gain experience with?',
+            answer: [
+                {
+                    text: 'Towards the end of my time at NWM there was an effort to view system outage time as a cost to the business.  System reliability and uptime grew in priority and many of us were formally trained in root cause analysis (ie. <a href="https://www.thinkreliability.com/case_studies/the-sinking-of-the-titanic-cause-map/" title="Example showing how multiple causes led to the sinking of the Titanic, and how fixing some of these causes could have prevented the failure.">cause mapping</a>)  Rather than point blame as to why a system had issues we worked to understand all of the multiple causes which led to a system incident and how to prevent them in the future.  This approach led to bringing our huge team closer and improved our overall system reliability.',
+                    classes: ''
+                },                               
+            ]
+        },
+        {
+            type: 20,
+            summary: 'Craziest Outage',
+            question: 'What was the craziest thing that happened while you worked there?',
+            answer: [
+                {
+                    text: 'Speaking of system reliability.  The wildest outage I remember was when someone tripped over an extension cord in the datacenter and took out a rack of servers.  Most of the company was down for the rest of the day.  On the upside, at least it was a straight forward set of causes rather than one of the mysterious outages where no one is sure where to start looking.',
+                    classes: ''
+                },                
+                
+            ]
+        },
+        {
+            type: 20,
+            summary: 'Reasons for leaving',
+            question: 'What were some of the reasons you decided to leave after 10 years?',
+            answer: [
+                {
+                    text: 'There wasnt enough coding.  I am a hands on person.  I enjoy learning, being technical and working with other developers to solve problems.  The company culture at the time was to move people away from coding as their careers progressed.  I feel good about work when I am building something.  ',
+                    classes: ''
+                },                
+                
+            ]
+        },
+                        
+    ];
+
+    const navigationData = {
+        from: 'career/nwm',
+        to: 'index.html'
+    }
+    
+    const footerData = {
+        classes: '',
+        links: [
+            {
+                classes: 'left',
+                label: 'Career History',
+                text: 'Senior Web Developer',
+                url: '../../career/mje',
+                icon : {
+                    name: 'chevron-right.svg',
+                }
+            },
+            {
+                classes: 'right',
+                label: 'Career History',
+                text: 'Business Owner',
+                url: '../../career/nah',
+                icon : {                    
+                    name: 'chevron-right.svg',
+                }
+            }
+        ]           
+    };
+       
+    // Render the page
+    GenerateCareerDetailPage(pageData, headerData, footerData, navigationData);
+    
+    console.log("career page dynamically generated");
+
+</script>
+
+</html>
+

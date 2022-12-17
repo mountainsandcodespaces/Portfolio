@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+  <link rel="icon" type="image/png" href="../../coding.png" />
+  <title>Career History in 6 questions - NAH</title> 
+  <link rel='stylesheet' href='~/../../../css/global.css' />  
+  <link rel='stylesheet' href='~/../../../css/portfolio-main.css' />  
+  <link rel='stylesheet' href='~/../../../css/career.css' /> 
+  <link rel='stylesheet' href='~/../../../js/components/pageSegments/pageSegments.css' />  
+  <link rel='stylesheet' href='~/../../../css/media-queries.css' />
+
+  <style>
+    .work-page .company-profile {        
+        background-color: skyblue;        
+        background: linear-gradient(rgba(33,124,176,.9),
+                                    rgb(0 93 131 / 90%)), 
+                                    url(../../img/timeline/nah.jpg) no-repeat;        
+        background-size: 100%;
+        background-position: 25%;
+    }
+  </style>
+
+</head>
+
+<body>
+<main>
+    
+    <section class='work-page'>
+        <div class='header'>
+            <div class='home-link' title='home' role='button'></div>        
+            <div class='header-content'>
+                <div class='stats'></div>
+            </div>
+        </div> 
+        <div class='company-profile'>Career History in Six Questions Or Less</div>
+        <div class='content'>    
+            <div class='side-bar sticky'></div>
+            <div class='detail-page'></div>
+        </div>
+        <div class='footer-nav'></div>            
+    </section>
+    <footer class='.footer'></footer>
+
+</main>
+</body>
+
+<script src="/js/intersectionObserver.js"></script>
+<script src="/Portfolio/js/intersectionObserver.js"></script>
+
+<script src="/js/routing.js"></script>
+<script src="/Portfolio/js/routing.js"></script> 
+
+<script src="~/../../../js/components/pageSegments/pageSegments.js"></script>
+<script src="/Portfolio/js/components/pageSegments/pageSegments.js"></script> 
+
+<script src="/js/careerDetailPage.js"></script>
+<script src="/Portfolio/js/careerDetailPage.js"></script> 
+
+<script>
+    console.log("fire up the javascript");
+    resetBody();
+
+    const headerData = [
+        {
+            company: 'Niagara Animal Hospital',
+            yearStart: 2014,
+            yearEnd: 2021,
+            title: 'Business Owner',
+            image: 'nah.jpg',
+        }
+    ];
+    
+    const pageData = [    
+    {
+            type: 20,
+            summary: 'Summary',
+            question: 'Tell me about this phase of your career',
+            answer: [
+                {
+                    text: 'After 10 years of working at Northwestern Mutual I was ready for new challenges.  My wife is a veterinarian and had always planned on owning her own Animal Hospital so we decided the time was right.',
+                    classes: ''
+                },     
+                {
+                    text: 'The business needed some work and we were motivated and hard working.  Over the course of seven years we turned it from a business that was slowly dying, to a thriving and growing business, which we eventually sold.',
+                    classes: ''
+                },                                               
+            ]
+        },     
+        // {
+        //     type: 20,
+        //     summary: 'Big Transition',
+        //     question: 'You went from corporate employee to business owner, how did that happen?',
+        //     answer: [
+        //         {
+        //             text: 'After 10 years of working at Northwestern Mutual I was ready for new challenges.  My wife is a veterinarian and had always planned on owning her own animal hospital so we decided the time was right and we bought an Animal Hospital near the Upper Peninsula of Michigan.',
+        //             classes: ''
+        //         },                                               
+        //     ]
+        // },   
+        {
+            type: 20,
+            summary: 'Splitting responsibilities',
+            question: 'What were your roles?',
+            answer: [
+                {
+                    text: 'My wife and I split responsibilities organically based on our experience and interests.  She ran the front end of the business as that was her expertise.  I had worked in large organizations and had more experience with HR and Marketing so those areas were a more natural fit for me.',
+                    classes: ''
+                },   
+                {
+                    text: 'Ultimately, I handled the behind the scenes aspects of the business and property.  From the company culture, to marketing, branding and advertising, to analyzing the workload and planning for staffing, designing and maintaining IT infrastructure, paying bills, purchasing new equipment, all the way down to fixing the plumbing and plowing snow.',
+                    classes: ''
+                },                                               
+            ]
+        },  
+        {
+            type: 20,
+            summary: 'Head of Marketing',
+            question: 'You found a way to stay creative...',
+            answer: [
+                {
+                    text: 'Having worked at Northwestern Mutual and seeing how they created very professional internal and external marketing materials, I took over marketing and advertising.  That’s an area I have been interested in for years so was an easy fit.',
+                    classes: ''
+                },   
+                {
+                    text: 'I designed all our internal and external marketing materials like client handouts, staff paperwork,  and newspaper advertisements, to make sure we were delivering a consistent professional message.  I created our social media strategy and content.  Eventually I delegated content creation to younger staff members looking for additional responsibilities and who were much better at social media than I was.',
+                    classes: ''
+                },      
+                {
+                    text: 'Initially our business had no website so I designed, handcoded and maintained our responsive website through a few re-designs.  Clients frequently commented how they liked it and I believe it improved our image and credibility. ',
+                    classes: ''
+                },   
+                {
+                    text: 'To grow our business and team I handled our facebook and google reviews to make sure: A) we were getting reviews, B) to respond appropriately to feedback, and C) to praise and reward our team for doing awesome work.  We had a 4.8 rating after hundreds of reviews when we sold the business.  The community liked us and we are very proud of that.',
+                    classes: ''
+                },                                            
+            ]
+        },  
+        {
+            type: 20,
+            summary: 'Finding IT work',
+            question: 'How were you able to keep your IT skills fresh?',
+            answer: [
+                {
+                    text: 'During this time period I also designed and coded a few responsive websites for local non-profits.  Eventually, when things were going smoothly, I was able to step away during the day and go back to my full time IT career building web apps.',
+                    classes: ''
+                },                                                              
+            ]
+        },  
+        {
+            type: 20,
+            summary: 'New Perspective',
+            question: 'How has your appreciation for being an employee changed?',
+            answer: [
+                {
+                    text: 'There’s a lot more that happens behind the scenes of a business to keep it running than most people realize.  After being a business owner I appreciate as an employee I can go into work and focus on the things I am good at and enjoy.  I also have an understanding of how to be the type of employee I valued as a business owner.',
+                    classes: ''
+                },                                                               
+            ]
+        },  
+                        
+    ];
+        
+    const navigationData = {
+        from: 'career/nah',
+        to: 'index.html'
+    }    
+       
+    const footerData = {
+        classes: '',
+        links: [
+            {
+                classes: 'left',
+                label: 'Career History',
+                text: 'Application Engineer',
+                url: '../../career/nwm',
+                icon : {
+                    name: 'chevron-right.svg',
+                }
+            },
+            {
+                classes: 'right',
+                label: 'Career History',
+                text: 'Senior Web Developer',
+                url: '../../career/mje',
+                icon : {                    
+                    name: 'chevron-right.svg',
+                }
+            }
+        ]           
+    };
+   
+    // function handleNavClick(link) {
+    //     navigateToPage('nah', `career/${link}`);  
+    // }
+    
+
+    // Render the page
+    GenerateCareerDetailPage(pageData, headerData, footerData, navigationData);
+    
+    console.log("career page dynamically generated");
+   
+</script>
+
+</html>
