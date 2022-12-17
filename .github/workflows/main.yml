@@ -4,7 +4,7 @@ on:
     # this is the branch where you develop your site
     # as discussed in the publishing sources section
     # this can change if you are using an user/organization repo
-    branches: [ master ]
+    branches: [ main ]
     
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -34,9 +34,9 @@ jobs:
       - run: for i in ./*.html; do html-minifier  --collapse-boolean-attributes --collapse-whitespace --minify-css --minify-js --minify-urls --remove-attribute-quotes --remove-comments --remove-empty-attributes --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --use-short-doctype $i -o $i; done
       
 
-      # (Force) push changes to `build` branch
+      # (Force) push changes to `prod` branch
       - run: |
           git config user.name mountainsandcodespaces
           git config user.email mountainsandcodespaces@user.noreply.github.com
           git commit -am 'Automated minify of ${{ github.sha }}'
-          git push --force -u origin master:build
+          git push --force -u origin main:prod
