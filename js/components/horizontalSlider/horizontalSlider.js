@@ -1,6 +1,8 @@
 /*
   UNIVERSAL SLIDER
 
+  AUTHOR:  mountainsandcode
+
   OPTIONS  
     - wrap [true/false]:  
             - true:  when reaching last slide, next slide is 
@@ -132,13 +134,13 @@ class HorizontalSlider {
                       || document.body.clientHeight;
 
       const ratio = width / height;
-      console.log("Screen Aspect Ratio: ", ratio);
+      //console.log("Screen Aspect Ratio: ", ratio);
       if (ratio > 0.9) {
-          console.log("Setting slide size to wide: ", this.slideSizeWide);
+          //console.log("Setting slide size to wide: ", this.slideSizeWide);
           this.slideSize = this.slideSizeWide; //0.50;
       }
       else {
-        console.log("Setting slide size back to narrow: ", this.slideSizeNarrow);
+        //console.log("Setting slide size back to narrow: ", this.slideSizeNarrow);
         this.slideSize = this.slideSizeNarrow; 
       }
     }
@@ -155,7 +157,7 @@ class HorizontalSlider {
     this.maxLeft = this.slideWidth * (this.data.length-1) - this.slidePadding;  
     this.minLeft = this.slidePadding;
 
-    console.log(this.slideWidth, this.slidePadding);
+    //console.log(this.slideWidth, this.slidePadding);
 
     //this.slideWidth = this.slidegroup.offsetWidth / 2;  // NEED to modify this to slides visible.
 
@@ -259,7 +261,7 @@ class HorizontalSlider {
 
   // Drag Start
   dragStart(e) {
-    console.log("Drag start: ", e);
+    //console.log("Drag start: ", e);
     
     if (this.allowMove) {
 
@@ -311,7 +313,7 @@ class HorizontalSlider {
       this.moveSlides(-1, 'drag');
     }
     else {      
-      console.log("not enough");
+      //console.log("not enough");
       //this.slidegroup.style.left = (this.posInitial) + "px";
       this.moveSlides(0, 'drag');
     }
@@ -434,7 +436,7 @@ class HorizontalSlider {
   // and sending out an animation complete event.
   transitionEnd() {  
     // console.log("transitionEnd(): ", e);  
-    console.log("transitionEnd(): ");  
+    //console.log("transitionEnd(): ");  
     this.slidegroup.classList.remove('animating');      
 
     // logic to handle wrapping the slides - Update the position and set new selected index

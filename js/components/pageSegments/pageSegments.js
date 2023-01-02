@@ -1,3 +1,14 @@
+/*
+    PAGE SEGMENTS
+
+    AUTHOR:  mountainsandcode
+   
+    Dynamically generates a page based on an array of json data.  Basically a mini-content rendering system.    
+    Each array item has a 'type' which determines what layout to use.  
+    Used for the Projects and Career pages and the standard footer on all pages.
+
+*/
+
 
 const IMAGE_PATH = '~/../../../img/projects';
 
@@ -73,9 +84,9 @@ function createImage(data) {
 }
 
 function createText(data) { 
-    if (data.text.includes('<ul>'))  {
-        console.log('createText - input: ', data);  
-    }
+    // if (data.text.includes('<ul>'))  {
+    //     console.log('createText - input: ', data);  
+    // }
     let classes = data.classes ?? '';
     let text = data.text ?? '';
 
@@ -90,9 +101,9 @@ function createText(data) {
         html += `<p ${classesHtml}>${text}</p>`;            
     }     
 
-    if (data.text.includes('<ul>'))  {
-        console.log('createText - output: ', html);  
-    }
+    // if (data.text.includes('<ul>'))  {
+    //     console.log('createText - output: ', html);  
+    // }
     return html;
 }
 

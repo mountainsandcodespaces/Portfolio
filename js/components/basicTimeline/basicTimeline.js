@@ -1,5 +1,7 @@
 /*
   BASIC TIMELINE
+  
+  AUTHOR:  mountainsandcode
 
   SUMMARY
     - Creates a basic horizontal timeline component from an array of events with a start and end year.
@@ -74,7 +76,7 @@ class BasicTimeline {
         this.state.componentWidth = this.componentEl.offsetWidth
         this.state.componentHeight = this.componentEl.offsetHeight;
 
-        console.log("Timeline initialized");
+        //console.log("Timeline initialized");
     } 
 
     // If the components size changes the slide withs will be incorrect.  Recalculate the widths.
@@ -387,8 +389,8 @@ class BasicTimeline {
         // Update our global state.
         this.state.index = newIndex;
 
-        console.log('State: ', this.state.index);
-        console.log('State: ', this.state.data[newIndex]);
+        //console.log('State: ', this.state.index);
+        //console.log('State: ', this.state.data[newIndex]);
         
         // Get the start and end years.
         let year = this.state.data[this.state.index].yearStart;

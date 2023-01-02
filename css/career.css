@@ -78,6 +78,8 @@
     text-decoration: underline;
     cursor:pointer;
 }
+.side-bar li.active {    
+}
 .side-bar li.active:before { 
     content: '';
     position: absolute;
